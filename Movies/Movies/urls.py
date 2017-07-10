@@ -20,5 +20,6 @@ from movies import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^movies/', views.MovieList.as_view())
+    url(r'^movies/', views.MovieList.as_view()),
+    url(r'^movie/(?P<id>(\d)+)', views.MovieView.as_view())
 ]
