@@ -5,6 +5,9 @@ class Person(models.Model):
     name = models.CharField(max_length=81)
     nationality = models.CharField(max_length=81)
 
+    def __str__(self):
+        return self.name
+
 
 class Movie(models.Model):
     title = models.CharField(max_length=81)
@@ -12,6 +15,9 @@ class Movie(models.Model):
     director = models.ForeignKey(Person)
     year = models.IntegerField()
     actors = models.ManyToManyField(Person, through='Role', related_name='playing')
+
+    def __str__(self):
+        return self.title
 
 
 class Role(models.Model):
